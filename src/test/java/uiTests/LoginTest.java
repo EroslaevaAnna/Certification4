@@ -1,4 +1,4 @@
-package certification4;
+package uiTests;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;

@@ -1,4 +1,4 @@
-package certification4;
+package uiTests;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,6 +9,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import service.CheckoutFormPage;
+import service.LoginPage;
+import service.ProductPage;
+import service.ShoppingCartPage;
 
 import java.time.Duration;
 
