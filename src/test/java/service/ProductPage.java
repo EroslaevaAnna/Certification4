@@ -19,12 +19,25 @@ public class ProductPage {
 
     public void addThreeProductsToCart() {
 
-        WebElement addToCart1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"add-to-cart-sauce-labs-backpack\"]")));
+        WebElement addToCart1 = wait.until(ExpectedConditions.elementToBeClickable(By.id
+                ("add-to-cart-sauce-labs-backpack")));
         addToCart1.click();
-        WebElement addToCart2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"add-to-cart-sauce-labs-bolt-t-shirt\"]")));
+        WebElement addToCart2 = wait.until(ExpectedConditions.elementToBeClickable(By.id
+                ("add-to-cart-sauce-labs-bolt-t-shirt")));
         addToCart2.click();
-        WebElement addToCart3 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"add-to-cart-sauce-labs-onesie\"]")));
+        WebElement addToCart3 = wait.until(ExpectedConditions.elementToBeClickable(By.id
+                ("add-to-cart-sauce-labs-onesie")));
         addToCart3.click();
+//
+//        WebElement addToCart1 = wait.until(ExpectedConditions.elementToBeClickable
+//                (By.cssSelector("[data-test='add-to-cart-sauce-labs-backpack']")));
+//       addToCart1.click();
+//        WebElement addToCart2 = wait.until(ExpectedConditions.elementToBeClickable
+//                (By.cssSelector("[data-test='add-to-cart-sauce-labs-bolt-t-shirt']")));
+//        addToCart2.click();
+//        WebElement addToCart3 = wait.until(ExpectedConditions.elementToBeClickable
+//                (By.cssSelector("[data-test='add-to-cart-sauce-labs-onesie']")));
+//        addToCart3.click();
     }
 }
 
