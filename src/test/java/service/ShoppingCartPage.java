@@ -1,6 +1,5 @@
 package service;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,11 +10,11 @@ import java.time.Duration;
 import java.util.List;
 
 public class ShoppingCartPage {
-    protected WebDriver driver;
+    protected static WebDriver driver;
     protected WebDriverWait wait;
 
     @FindBy(className = "cart_item_label")
-    private static WebElement itemsList;
+    private static List<WebElement> itemsList;
 
     @FindBy(xpath = "//*[@id=\"checkout\"]")
     private WebElement buyButton;
@@ -34,8 +33,7 @@ public class ShoppingCartPage {
     }
 
     public static int getItemCount() {
-        List<WebElement> items = itemsList.findElements(By.className("cart_item_label"));
-        return items.size();
+        return itemsList.size();
     }
 
     public void clickBuyButton() {

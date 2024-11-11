@@ -1,4 +1,5 @@
 package uiTests;
+
 import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
@@ -34,8 +35,8 @@ public class ShoppingCartTest {
         productPage = new ProductPage(driver);
         shoppingCartPage = new ShoppingCartPage(driver);
         checkoutFormPage = new CheckoutFormPage(driver);
-
     }
+
     @AfterEach
     void tearDown() {
         if (driver != null) {
@@ -47,11 +48,10 @@ public class ShoppingCartTest {
     @Link(url = "ссылка на конфлюенс", name = "Требования")
     @TmsLink("ссылка на Jira")
     @Owner("Anna")
-    @DisplayName ("Е2Е покупка 3 товаров")
+    @DisplayName("Е2Е покупка 3 товаров")
     @Description("Тестирование процесса покупки в интернет-магазине SauceDemo")
     @Severity(SeverityLevel.CRITICAL)
     public void shoppingFlowTest() {
-
         step("Авторизация");
         loginPage.enterUsername("standard_user");
         loginPage.enterPassword("secret_sauce");
@@ -69,18 +69,10 @@ public class ShoppingCartTest {
         String expectedYourCart = "Your Cart";
         assertEquals(actualYourCart, expectedYourCart, "Вкорзину не зашли");
 
-//        driver.get("https://www.saucedemo.com/cart.html");
-
         step("Проверка количества товаров в корзине");
-//        wait.until(ExpectedConditions.numberOfElementsToBe(By.className ("cart_item_label"), 3));
-//        int itemCount = shoppingCartPage.getItemCount();
-//        //Assertions.assertEquals(3, itemCount, "Количество товаров в корзине не соответствует ожидаемому. Ожидалось: 3, фактически: " + itemCount);
-//        //assertEquals(3, itemCount, "Количество товаров в корзине не соответствует ожидаемому.");
-        int expectedCount = 3;
-        int actualCount = shoppingCartPage.getItemCount();
-        assertEquals(expectedCount, actualCount,
-                "Количество товаров в корзине не соответствует ожидаемому. Ожидалось: "
-                        + expectedCount + ", фактически: " + actualCount);
+        wait.until(ExpectedConditions.numberOfElementsToBe(By.className("cart_item_label"), 3));
+        int itemCount = shoppingCartPage.getItemCount();
+        Assertions.assertEquals(3, itemCount, "Количество товаров в корзине не соответствует ожидаемому. Ожидалось: 3, фактически: " + itemCount);
 
         step("Клик по кнопке \"Купить\"");
         shoppingCartPage.clickBuyButton();
@@ -134,6 +126,7 @@ public class ShoppingCartTest {
         String expectedText = "Swag Labs";
         Assertions.assertEquals(expectedText, actualText);
     }
+
     @Test
     @Owner("Anna")
     @TmsLink("ссылка на Jira")
