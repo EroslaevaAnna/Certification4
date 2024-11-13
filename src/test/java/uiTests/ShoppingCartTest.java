@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Epic("магазин товаров")
-@Feature("Вход в магазин и путь до поокупки")
+@Feature("Процесс входа в магазин и выбора товаров")
 public class ShoppingCartTest {
     private WebDriver driver;
     private WebDriverWait wait;
@@ -48,8 +48,8 @@ public class ShoppingCartTest {
     @Link(url = "ссылка на конфлюенс", name = "Требования")
     @TmsLink("ссылка на Jira")
     @Owner("Anna")
-    @DisplayName("Е2Е покупка 3 товаров")
-    @Description("Тестирование процесса покупки в интернет-магазине SauceDemo")
+    @DisplayName("Е2Е покупка 3 товаров пользователь standard_user")
+    @Description("Тестирование процесса покупки пользователь standard_user")
     @Severity(SeverityLevel.CRITICAL)
     public void shoppingFlowTestStandart() {
         step("Авторизация");
@@ -100,8 +100,8 @@ public class ShoppingCartTest {
     @Link(url = "ссылка на конфлюенс", name = "Требования")
     @TmsLink("ссылка на Jira")
     @Owner("Anna")
-    @DisplayName("Е2Е покупка 3 товаров")
-    @Description("Тестирование процесса покупки в интернет-магазине SauceDemo")
+    @DisplayName("Е2Е покупка 3 товаров пользователь performance_glitch_user")
+    @Description("Тестирование процесса покупки пользователь performance_glitch_user")
     @Severity(SeverityLevel.CRITICAL)
     public void shoppingFlowTestGlitch() {
         step("Авторизация");

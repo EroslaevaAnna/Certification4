@@ -1,7 +1,7 @@
 package uiTests;
 
-import com.assertthat.selenium_shutterbug.core.Capture;
 import com.assertthat.selenium_shutterbug.core.Shutterbug;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -32,8 +32,15 @@ public class LoginTest {
     }
 
     @Test
+    @Story("Покупатель хочет купить товары в магазине")
+    @Feature("Процесс входа в магазин и выбора товаров")
+    @Owner("Anna")
+    @Description("Проверка успешной авторизации покупателя в магазине")
+    @Link("Ссылка на Jira")
+    @TmsLink("Ссылка на TMS")
+    @Tag("Positive")
+    @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка успешной авторизации")
-    @Tag("Позитивный")
     public void testLoginSuccess() {
         driver.get("https://www.saucedemo.com/");
         WebElement usernameField = wait.until(visibilityOfElementLocated(By.id("user-name")));
@@ -49,6 +56,13 @@ public class LoginTest {
     }
 
     @Test
+    @Story("Покупатель хочет купить товары в магазине")
+    @Feature("Процесс входа в магазин и выбора товаров")
+    @Owner("Anna")
+    @Description("Проверка заблокированного пользователя")
+    @Link("Ссылка на Jira")
+    @TmsLink("Ссылка на TMS")
+    @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка авторизации заблокированного пользователя")
     @Tag("Негативный")
     public void testLoginNotSuccess() {
