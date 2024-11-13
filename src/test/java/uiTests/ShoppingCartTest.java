@@ -1,6 +1,7 @@
 package uiTests;
 
 import io.qameta.allure.*;
+import io.restassured.RestAssured;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,10 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import service.CheckoutFormPage;
-import service.LoginPage;
-import service.ProductPage;
-import service.ShoppingCartPage;
+import service.*;
+
 import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -28,8 +27,10 @@ public class ShoppingCartTest {
 
     @BeforeEach
     void setUp() {
+        RestAssured.baseURI = ConfHelperUI.getProperty("url");
+        RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
         driver = new ChromeDriver();
-        driver.get("https://www.saucedemo.com/");
+        driver.get(ConfHelperUI.getProperty("url"));
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         loginPage = new LoginPage(driver);
         productPage = new ProductPage(driver);
