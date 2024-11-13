@@ -46,6 +46,4 @@ public class LoginPage {
     public boolean isLoginSuccessful() {
         return wait.until(ExpectedConditions.visibilityOf(successMessage)).isDisplayed();
     }
-
-
 }

@@ -22,7 +22,6 @@ public class ShoppingCartPage {
     @FindBy(xpath = "//*[@id=\"shopping_cart_container\"]/a")
     private static WebElement clickCart;
 
-
     public  ShoppingCartPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
