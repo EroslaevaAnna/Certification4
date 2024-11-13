@@ -23,14 +23,12 @@ public class LoginTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         Shutterbug.shootPage(driver).save();
     }
-
     @AfterEach
     public  void tearDown () {
         if (driver != null) {
             driver.quit();
         }
     }
-
     @Test
     @Story("Покупатель хочет купить товары в магазине")
     @Feature("Процесс входа в магазин и выбора товаров")
@@ -54,7 +52,6 @@ public class LoginTest {
         String expectedText = "Swag Labs";
         assertEquals(expectedText, actualText);
     }
-
     @Test
     @Story("Покупатель хочет купить товары в магазине")
     @Feature("Процесс входа в магазин и выбора товаров")
